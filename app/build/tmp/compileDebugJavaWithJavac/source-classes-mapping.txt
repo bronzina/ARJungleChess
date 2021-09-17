@@ -1,0 +1,13 @@
+uni/bronzina/junglechessar/ResolveDialogFragment.java
+ uni.bronzina.junglechessar.ResolveDialogFragment
+ uni.bronzina.junglechessar.ResolveDialogFragment$OkListener
+uni/bronzina/junglechessar/BuildConfig.java
+ uni.bronzina.junglechessar.BuildConfig
+uni/bronzina/junglechessar/util/Utils.java
+ uni.bronzina.junglechessar.util.Utils
+ uni.bronzina.junglechessar.util.Utils$1
+uni/bronzina/junglechessar/Score.java
+ uni.bronzina.junglechessar.Score
+ uni.bronzina.junglechessar.Score$1
+uni/bronzina/junglechessar/InitTrueTimeAsyncTask.java
+ uni.bronzina.junglechessar.InitTrueTimeAsyncTask

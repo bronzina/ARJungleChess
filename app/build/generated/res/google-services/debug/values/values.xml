@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">489930002764-1aavfvd1qudodiqfjimkue60v2139c8r.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">489930002764</string>
+    <string name="google_api_key" translatable="false">AIzaSyBTZpbAShzpvSC-pwUdVr-OFzHRwRiICqY</string>
+    <string name="google_app_id" translatable="false">1:489930002764:android:87cf3e56ddabb3f2893fe9</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBTZpbAShzpvSC-pwUdVr-OFzHRwRiICqY</string>
+    <string name="google_storage_bucket" translatable="false">jungle-chess-ar.appspot.com</string>
+    <string name="project_id" translatable="false">jungle-chess-ar</string>
+</resources>
