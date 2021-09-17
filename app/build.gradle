@@ -1,0 +1,151 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "uni.bronzina.junglechessar"
+        minSdkVersion 24
+        targetSdkVersion 28
+        versionCode = rootProject.ext.versionCode
+        versionName = rootProject.ext.versionName
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    compile files('libs/super-csv-2.4.0.jar')
+    implementation 'com.google.ar:core:1.25.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation("androidx.activity:activity-ktx:1.3.1")
+    implementation("androidx.fragment:fragment-ktx:1.3.6")
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+
+    def dependencies = rootProject.ext.dependencies
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.google.firebase:firebase-perf:20.0.2'
+
+    implementation platform('com.google.firebase:firebase-bom:28.3.1')
+
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'com.github.instacart.truetime-android:library:3.4'
+
+    implementation dependencies.kotlinStdlib
+    implementation dependencies.rxandroid2
+    implementation dependencies.rxjava2
+    implementation dependencies.firebaseDb
+    implementation dependencies.firebaseAuth
+    implementation dependencies.authUI
+    implementation dependencies.sceneform
+
+    testImplementation dependencies.jUnit
+}
+
+apply plugin: 'com.google.ar.sceneform.plugin'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.firebase-perf'
+
+
+sceneform.asset('sampledata/models/Animals/Cat/Mesh_Cat.obj',
+        'default',
+        'sampledata/models/Animals/Cat/Mesh_Cat.sfa',
+        'src/main/assets/Mesh_Cat')
+
+sceneform.asset('sampledata/models/Animals/Dog/Mesh_Beagle.obj',
+        'default',
+        'sampledata/models/Animals/Dog/Mesh_Beagle.sfa',
+        'src/main/assets/Mesh_Beagle')
+
+sceneform.asset('sampledata/models/Animals/Mouse/Mesh_Hamster.obj',
+        'default',
+        'sampledata/models/Animals/Mouse/Mesh_Hamster.sfa',
+        'src/main/assets/Mesh_Hamster')
+
+sceneform.asset('sampledata/models/Animals/Tiger/Mesh_BengalTiger.obj',
+        'default',
+        'sampledata/models/Animals/Tiger/Mesh_BengalTiger.sfa',
+        'src/main/assets/Mesh_BengalTiger')
+
+sceneform.asset('sampledata/models/Animals/Wolves/Mesh_Wolf.obj',
+        'default',
+        'sampledata/models/Animals/Wolves/Mesh_Wolf.sfa',
+        'src/main/assets/Mesh_Wolf')
+
+sceneform.asset('sampledata/models/Animals/Lion/Mesh_Lion.obj',
+        'default',
+        'sampledata/models/Animals/Lion/Mesh_Lion.sfa',
+        'src/main/assets/Mesh_Lion')
+
+sceneform.asset('sampledata/models/Animals/Leopard/Mesh_Leopard.obj',
+        'default',
+        'sampledata/models/Animals/Leopard/Mesh_Leopard.sfa',
+        'src/main/assets/Mesh_Leopard')
+
+sceneform.asset('sampledata/models/Animals/Elephant/Elephant.obj',
+        'default',
+        'sampledata/models/Animals/Elephant/Elephant.sfa',
+        'src/main/assets/Elephant')
+
+sceneform.asset('sampledata/models/Tile/Field_1268.obj',
+        'default',
+        'sampledata/models/Tile/Field_1268.sfa',
+        'src/main/assets/Field_1268')
+
+sceneform.asset('sampledata/models/Tile/Waterfall_1228.obj',
+        'default',
+        'sampledata/models/Tile/Waterfall_1228.sfa',
+        'src/main/assets/Waterfall_1228')
+
+sceneform.asset('sampledata/models/Tile/Environment.obj',
+        'default',
+        'sampledata/models/Tile/Environment.sfa',
+        'src/main/assets/Environment')
+
+sceneform.asset('sampledata/models/Tile/trees1.obj',
+        'default',
+        'sampledata/models/Tile/trees1.sfa',
+        'src/main/assets/trees1')
+
+sceneform.asset('sampledata/models/Tile/Canal.obj',
+        'default',
+        'sampledata/models/Tile/Canal.sfa',
+        'src/main/assets/Canal')
+
+sceneform.asset('sampledata/models/Tile/Wave.obj',
+        'default',
+        'sampledata/models/Tile/Wave.sfa',
+        'src/main/assets/Wave')
+
+sceneform.asset('sampledata/models/Tile/model.obj',
+        'default',
+        'sampledata/models/Tile/model.sfa',
+        'src/main/assets/model')
+
+sceneform.asset('sampledata/models/Tile/grass/model-triangulated.obj',
+        'default',
+        'sampledata/models/Tile/grass/model-triangulated.sfa',
+        'src/main/assets/model-triangulated')
+
+sceneform.asset('sampledata/models/Tile/trap/SM_Castle.obj',
+        'default',
+        'sampledata/models/Tile/trap/SM_Castle.sfa',
+        'src/main/assets/SM_Castle')
