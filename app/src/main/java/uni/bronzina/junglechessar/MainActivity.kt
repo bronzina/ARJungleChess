@@ -150,14 +150,11 @@ class MainActivity : AppCompatActivity() {
     //Line chart
     private var startTimeA: Long = 0
     private var startTimeB: Long = 0
-    private var i: Int = 0
     private var indexStart: Int = 0
     private var indexEnd: Int = 0
     private var moveStartA: HashMap<Int, Long> = HashMap()
     private var moveStartB: HashMap<Int, Long> = HashMap()
-    private var lagA: HashMap<Int, Long> = HashMap()
-    private var lagB: HashMap<Int, Long> = HashMap()
-    public var scoreList: ArrayList<Score> = ArrayList()
+    private var scoreList: ArrayList<Score> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -687,22 +684,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startTimer(userA: Boolean){
-        //beginTimer = System.nanoTime()
         beginTimer = getTrueTime()
         if(userA){
-            //mGameController.storeUpdateTimeStartA(beginTimer)
             moveStartA[indexStart] = beginTimer
             indexStart++
         }
         else{
-            //mGameController.storeUpdateTimeStartB(beginTimer)
             moveStartB[indexStart] = beginTimer
             indexStart++
         }
     }
 
     private fun endTimer(userA: Boolean){
-        //endTimer = System.nanoTime()
         endTimer = getTrueTime()
         var perf = PerformanceModel(indexEnd, endTimer)
 
@@ -2020,35 +2013,27 @@ class MainActivity : AppCompatActivity() {
         if(updatedAnimalA.animalDrawType == AnimalDrawType.TYPE_A){
             if(updatedAnimalA.animalType == AnimalType.RAT){
                 eatOrMove(col, row, playeAmouseRenderable, AnimalType.RAT, AnimalTypeA.RAT)
-                //moveChessman(col, row, playeAmouseRenderable, AnimalType.RAT, AnimalType.RAT.index-1)
             }
             else if(updatedAnimalA.animalType == AnimalType.CAT){
                 eatOrMove(col, row, playeAcatRenderable, AnimalType.CAT, AnimalTypeA.CAT)
-                //moveChessman(col, row, playeAcatRenderable, AnimalType.CAT, AnimalType.CAT.index-1)
             }
             else if(updatedAnimalA.animalType == AnimalType.DOG){
                 eatOrMove(col, row, playeAdogRenderable, AnimalType.DOG, AnimalTypeA.DOG)
-                //moveChessman(col, row, playeAdogRenderable, AnimalType.DOG, AnimalType.DOG.index-1)
             }
             else if(updatedAnimalA.animalType == AnimalType.WOLF){
                 eatOrMove(col, row, playeAwolveRenderable, AnimalType.WOLF, AnimalTypeA.WOLF)
-                //moveChessman(col, row, playeAwolveRenderable, AnimalType.WOLF, AnimalType.WOLF.index-1)
             }
             else if(updatedAnimalA.animalType == AnimalType.LEOPARD){
                 eatOrMove(col, row, playeAleopardRenderable, AnimalType.LEOPARD, AnimalTypeA.LEOPARD)
-                //moveChessman(col, row, playeAleopardRenderable, AnimalType.LEOPARD, AnimalType.LEOPARD.index-1)
             }
             else if(updatedAnimalA.animalType == AnimalType.TIGER){
                 eatOrMove(col, row, playeAtigerRenderable, AnimalType.TIGER, AnimalTypeA.TIGER)
-                //moveChessman(col, row, playeAtigerRenderable, AnimalType.TIGER, AnimalType.TIGER.index-1)
             }
             else if(updatedAnimalA.animalType == AnimalType.LION){
                 eatOrMove(col, row, playeAlionRenderable, AnimalType.LION, AnimalTypeA.LION)
-                //moveChessman(col, row, playeAlionRenderable, AnimalType.LION, AnimalType.LION.index-1)
             }
             else if(updatedAnimalA.animalType == AnimalType.ELEPHANT){
                 eatOrMove(col, row, playeAelephantRenderable, AnimalType.ELEPHANT, AnimalTypeA.ELEPHANT)
-                //moveChessman(col, row, playeAelephantRenderable, AnimalType.ELEPHANT, AnimalType.ELEPHANT.index-1)
             }
 
             endTimer(true)
@@ -2057,35 +2042,27 @@ class MainActivity : AppCompatActivity() {
         else{
             if(updatedAnimalA.animalType == AnimalType.RAT){
                 eatOrMoveB(col, row, playeBmouseRenderable, AnimalType.RAT, AnimalTypeB.RAT)
-                //moveChessmanB(col, row, playeBmouseRenderable, AnimalType.RAT, AnimalType.RAT.index-1)
             }
             else if(updatedAnimalA.animalType == AnimalType.CAT){
                 eatOrMoveB(col, row, playeBcatRenderable, AnimalType.CAT, AnimalTypeB.CAT)
-                //moveChessmanB(col, row, playeBcatRenderable, AnimalType.CAT, AnimalType.CAT.index-1)
             }
             else if(updatedAnimalA.animalType == AnimalType.DOG){
                 eatOrMoveB(col, row, playeBdogRenderable, AnimalType.DOG, AnimalTypeB.DOG)
-                //moveChessmanB(col, row, playeBdogRenderable, AnimalType.DOG, AnimalType.DOG.index-1)
             }
             else if(updatedAnimalA.animalType == AnimalType.WOLF){
                 eatOrMoveB(col, row, playeBwolveRenderable, AnimalType.WOLF, AnimalTypeB.WOLF)
-                //moveChessmanB(col, row, playeBwolveRenderable, AnimalType.WOLF, AnimalType.WOLF.index-1)
             }
             else if(updatedAnimalA.animalType == AnimalType.LEOPARD){
                 eatOrMoveB(col, row, playeBleopardRenderable, AnimalType.LEOPARD, AnimalTypeB.LEOPARD)
-                //moveChessmanB(col, row, playeBleopardRenderable, AnimalType.LEOPARD, AnimalType.LEOPARD.index-1)
             }
             else if(updatedAnimalA.animalType == AnimalType.TIGER){
                 eatOrMoveB(col, row, playeBtigerRenderable, AnimalType.TIGER, AnimalTypeB.TIGER)
-                //moveChessmanB(col, row, playeBtigerRenderable, AnimalType.TIGER, AnimalType.TIGER.index-1)
             }
             else if(updatedAnimalA.animalType == AnimalType.LION){
                 eatOrMoveB(col, row, playeBlionRenderable, AnimalType.LION, AnimalTypeB.LION)
-                //moveChessmanB(col, row, playeBlionRenderable, AnimalType.LION, AnimalType.LION.index-1)
             }
             else if(updatedAnimalA.animalType == AnimalType.ELEPHANT){
                 eatOrMoveB(col, row, playeBelephantRenderable, AnimalType.ELEPHANT, AnimalTypeB.ELEPHANT)
-                //moveChessmanB(col, row, playeBelephantRenderable, AnimalType.ELEPHANT, AnimalType.ELEPHANT.index-1)
             }
 
             endTimer(false)
@@ -2307,7 +2284,6 @@ class MainActivity : AppCompatActivity() {
                         mGameController.getAnimalInfoEat(false, this::onAnimalEatUpdate)
                         mGameController.setOnUserTurnListener(this::onUserTurn)
                         mGameController.setOnGameFinishListener(this::onGameFinish)
-                        //mGameController.setOnTimeStartListenerB(this::onTimeStartB)
                         mGameController.setOnTimeEndListenerA(this::onTimeEndA)
                     }
                 }
@@ -2335,7 +2311,6 @@ class MainActivity : AppCompatActivity() {
                 mGameController.getAnimalInfoEat(true, this::onAnimalEatUpdate)
                 mGameController.setOnUserTurnListener(this::onUserTurn)
                 mGameController.setOnGameFinishListener(this::onGameFinish)
-                //mGameController.setOnTimeStartListenerA(this::onTimeStartA)
                 mGameController.setOnTimeEndListenerB(this::onTimeEndB)
 
                 placeBoard()
@@ -2397,91 +2372,20 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    /*data class Score(
-            val index: Int,
-            val time: Long,
-    )*/
-
-    /*private fun onTimeStart(start: Long){
-        startTime = start
-    }*/
-
-    private fun onTimeStartA(start: Long){
-        startTimeA = start
-    }
-
-    private fun onTimeStartB(start: Long){
-        startTimeB = start
-    }
-
-    /*private fun onTimeEnd(end: Long){
-        var time = end - startTime
-        i++
-        scoreList.add(Score(i.toString(), time))
-    }*/
-
     private fun onTimeEndA(perf: PerformanceModel){
-        //var time = end - startTimeA
         val s = perf.index
         val starting = moveStartA[s]
         val endTime = getTrueTime()
         val time = endTime - starting!!
         scoreList.add(Score(s, time / 2))
-        //lagA[s] = time / 2               // time represents RTT, so effective lag is time/2
-        /*if(s == 3){
-            writeCSV()
-        }*/
-        //writeCSV()
     }
 
     private fun onTimeEndB(perf: PerformanceModel){
-        //var time = end - startTimeB
         val s = perf.index
         val starting = moveStartB[s]
         val endTime = getTrueTime()
         val time = endTime - starting!!
         scoreList.add(Score(s, time / 2))
-        //lagB[s] = time / 2                 // time represents RTT, so effective lag is time/2
-        /*if(s == 3){
-            writeCSV()
-        }*/
-        //writeCSV()
-    }
-
-
-    private fun writeCSV() {
-
-        val file = File(Environment.getExternalStorageDirectory(), "csv/test.txt")
-        val outputStream = FileOutputStream(file)
-        outputStream.write("test".toByteArray())
-        outputStream.close()
-
-        /*val FILENAME = "test.csv"
-        val entry = "1234"
-
-        val directoryDownload = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-        val logDir = File(directoryDownload, "Happy App Logs") //Creates a new folder in DOWNLOAD directory
-
-        logDir.mkdirs()
-        val file = File(logDir, FILENAME)
-        val out = FileOutputStream(file)
-        out.write(entry.toByteArray()) //Write the obtained string to csv
-
-        out.close()*/
-        //toastIt("Entry saved")
-
-
-        /*val output = FileWriter(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS))
-        CsvListWriter(output, CsvPreference.STANDARD_PREFERENCE).use { listWriter ->
-            for ((key, value) in lagA) {
-                listWriter.write(key, value)
-            }
-            for ((key, value) in lagB) {
-                listWriter.write(key, value)
-            }
-        }
-
-        println(output)*/
     }
 
     //private var firebaseAuth: FirebaseAuth? = null

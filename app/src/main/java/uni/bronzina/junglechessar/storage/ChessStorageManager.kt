@@ -346,11 +346,6 @@ internal class ChessStorageManager {
                 })
     }
 
-    /*fun writeUpdateTimeStart(roomId: Int, beginTimer: Long){
-        d(TAG, "writeUpdateTimeStart, roomId: $roomId, beginTimer: $beginTimer")
-        rootRef.child(roomId.toString()).child(KEY_PERFORMANCE).child("start").setValue(beginTimer)
-    }*/
-
     fun writeUpdateTimeStartA(roomId: Int, beginTimer: Long){
         d(TAG, "writeUpdateTimeStartA, roomId: $roomId, beginTimer: $beginTimer")
         rootRef.child(roomId.toString()).child(KEY_PERFORMANCE).child("A").child("start").setValue(beginTimer)
@@ -361,12 +356,6 @@ internal class ChessStorageManager {
         rootRef.child(roomId.toString()).child(KEY_PERFORMANCE).child("B").child("start").setValue(beginTimer)
     }
 
-
-    /*fun writeUpdateTimeEnd(roomId: Int, endTimer: Long){
-        d(TAG, "writeUpdateTimeEnd, roomId: $roomId, beginTimer: $endTimer")
-        rootRef.child(roomId.toString()).child(KEY_PERFORMANCE).child("end").setValue(endTimer)
-    }*/
-
     fun writeUpdateTimeEndA(roomId: Int, perf: PerformanceModel){
         d(TAG, "writeUpdateTimeEndA, roomId: $roomId, beginTimer: ${perf.time}")
         rootRef.child(roomId.toString()).child(KEY_PERFORMANCE).child("A").child("end").setValue(perf)
@@ -376,30 +365,6 @@ internal class ChessStorageManager {
         d(TAG, "writeUpdateTimeEndB, roomId: $roomId, beginTimer: ${perf.time}")
         rootRef.child(roomId.toString()).child(KEY_PERFORMANCE).child("B").child("end").setValue(perf)
     }
-
-    /*fun readUpdateTimeStart(roomId: Int, onReadUpdateTimeStart: (beginTimer: Long) -> Unit){
-        d(TAG, "readUpdateTimeStart, roomId: $roomId")
-
-        rootRef
-                .child(roomId.toString())
-                .child(KEY_PERFORMANCE)
-                .child("start")
-                .addValueEventListener(object : ValueEventListener {
-                    override fun onCancelled(error: DatabaseError) {
-                        d(TAG, "readUpdateTimeStart onCancelled")
-                    }
-
-                    override fun onDataChange(dataSnapshot: DataSnapshot) {
-                        d(TAG, "readUpdateTimeStart onDataChange")
-
-                        val value = dataSnapshot.getValue(Long::class.java)
-                        if(value != null){
-                            onReadUpdateTimeStart(value)
-                        }
-                    }
-
-                })
-    }*/
 
     fun readUpdateTimeStartA(roomId: Int, onReadUpdateTimeStartA: (beginTimer: Long) -> Unit){
         d(TAG, "readUpdateTimeStartA, roomId: $roomId")
@@ -450,30 +415,6 @@ internal class ChessStorageManager {
 
                 })
     }
-
-    /*fun readUpdateTimeEnd(roomId: Int, onReadUpdateTimeEnd: (endTimer: Long) -> Unit){
-        d(TAG, "readUpdateTimeEnd, roomId: $roomId")
-
-        rootRef
-                .child(roomId.toString())
-                .child(KEY_PERFORMANCE)
-                .child("end")
-                .addValueEventListener(object : ValueEventListener {
-                    override fun onCancelled(error: DatabaseError) {
-                        d(TAG, "readUpdateTimeEnd onCancelled")
-                    }
-
-                    override fun onDataChange(dataSnapshot: DataSnapshot) {
-                        d(TAG, "readUpdateTimeEnd onDataChange")
-
-                        val value = dataSnapshot.getValue(Long::class.java)
-                        if(value != null){
-                            onReadUpdateTimeEnd(value)
-                        }
-                    }
-
-                })
-    }*/
 
     fun readUpdateTimeEndA(roomId: Int, onReadUpdateTimeEndA: (perf: PerformanceModel) -> Unit){
         d(TAG, "readUpdateTimeEndA, roomId: $roomId")

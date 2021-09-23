@@ -2,8 +2,6 @@ package uni.bronzina.junglechessar.model
 
 data class PerformanceModel(var index: Int = 0, var time: Long = 0)
 
-data class AnimalTile(var animal: Animal = Animal(), var tile: Tile = Tile())
-
 data class Tile(var posCol: Int = 0, var posRow: Int = 0,
                 var tileType: TileType = TileType.TILE_GRASS)
 

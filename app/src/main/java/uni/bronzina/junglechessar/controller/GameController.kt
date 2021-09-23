@@ -17,10 +17,8 @@ class GameController {
 
     private lateinit var onGameFinish: (gameState: GameState, currentRound: Int) -> Unit
     private lateinit var onUserTurn: (userAturn: Boolean) -> Unit
-    //private lateinit var onTimeStart: (beginTimer: Long) -> Unit
     private lateinit var onTimeStartA: (beginTimer: Long) -> Unit
     private lateinit var onTimeStartB: (beginTimer: Long) -> Unit
-    //private lateinit var onTimeEnd: (endTimer: Long) -> Unit
     private lateinit var onTimeEndA: (perf: PerformanceModel) -> Unit
     private lateinit var onTimeEndB: (perf: PerformanceModel) -> Unit
 
@@ -110,9 +108,6 @@ class GameController {
 
     }
 
-    /*fun initGameBoard(animalList: List<Animal>) {
-    }*/
-
     fun updateTurnInfo(userATurn: Boolean){
         d(TAG, "updateTurnInfo")
         mStorageManager.writeTurnInfo(mRoomId, userATurn)
@@ -198,26 +193,6 @@ class GameController {
         }
     }
 
-    /*fun storeUpdateTimeStart(beginTimer: Long){
-        d(TAG, "storeUpdateTimeStart")
-        mStorageManager.writeUpdateTimeStart(mRoomId, beginTimer)
-    }*/
-
-    fun storeUpdateTimeStartA(beginTimer: Long){
-        d(TAG, "storeUpdateTimeStartA")
-        mStorageManager.writeUpdateTimeStartA(mRoomId, beginTimer)
-    }
-
-    fun storeUpdateTimeStartB(beginTimer: Long){
-        d(TAG, "storeUpdateTimeStartB")
-        mStorageManager.writeUpdateTimeStartB(mRoomId, beginTimer)
-    }
-
-    /*fun storeUpdateTimeEnd(endTimer: Long){
-        d(TAG, "storeUpdateTimeEnd")
-        mStorageManager.writeUpdateTimeEnd(mRoomId, endTimer)
-    }*/
-
     fun storeUpdateTimeEndA(perf: PerformanceModel){
         d(TAG, "storeUpdateTimeEndA")
         mStorageManager.writeUpdateTimeEndA(mRoomId, perf)
@@ -227,42 +202,6 @@ class GameController {
         d(TAG, "storeUpdateTimeEndB")
         mStorageManager.writeUpdateTimeEndB(mRoomId, perf)
     }
-
-    /*fun setOnTimeStartListener(onTimeStart: (beginTimer: Long) -> Unit) {
-        d(TAG, "setOnTimeStartListener")
-        this.onTimeStart = onTimeStart
-
-        mStorageManager.readUpdateTimeStart(mRoomId) { beginTimer ->
-            onTimeStart(beginTimer)
-        }
-    }*/
-
-    fun setOnTimeStartListenerA(onTimeStartA: (beginTimer: Long) -> Unit) {
-        d(TAG, "setOnTimeStartListenerA")
-        this.onTimeStartA = onTimeStartA
-
-        mStorageManager.readUpdateTimeStartA(mRoomId) { beginTimer ->
-            onTimeStartA(beginTimer)
-        }
-    }
-
-    fun setOnTimeStartListenerB(onTimeStartB: (beginTimer: Long) -> Unit) {
-        d(TAG, "setOnTimeStartListenerB")
-        this.onTimeStartB = onTimeStartB
-
-        mStorageManager.readUpdateTimeStartB(mRoomId) { beginTimer ->
-            onTimeStartB(beginTimer)
-        }
-    }
-
-    /*fun setOnTimeEndListener(onTimeEnd: (endTimer: Long) -> Unit) {
-        d(TAG, "setOnTimeEndListener")
-        this.onTimeEnd = onTimeEnd
-
-        mStorageManager.readUpdateTimeEnd(mRoomId) { endTimer ->
-            onTimeEnd(endTimer)
-        }
-    }*/
 
     fun setOnTimeEndListenerA(onTimeEndA: (perf: PerformanceModel) -> Unit) {
         d(TAG, "setOnTimeEndListenerA")
